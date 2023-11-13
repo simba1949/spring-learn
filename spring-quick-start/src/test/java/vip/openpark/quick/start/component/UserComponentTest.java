@@ -11,7 +11,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 public class UserComponentTest {
 
     @Test
-    public void createUserComponent() {
+    public void getUserComponent() {
         // 加载 spring 配置文件
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bean.xml");
         // 获取创建的对象
