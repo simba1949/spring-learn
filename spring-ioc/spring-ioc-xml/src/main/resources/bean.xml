@@ -8,4 +8,14 @@
         class：要创建对象的全限定名
     -->
     <bean id="userComponent" class="vip.openpark.ioc.xml.component.UserComponent"/>
+
+    <bean id="bookSetter" class="vip.openpark.ioc.xml.component.Book">
+        <property name="name" value="《Spring——依赖注入（setter）》"/>
+        <property name="author" value="anthony"/>
+    </bean>
+
+    <bean id="bookConstructor" class="vip.openpark.ioc.xml.component.Book">
+        <constructor-arg name="name" value="《Spring——依赖注入（构造器）》"/>
+        <constructor-arg name="author" value="anthony"/>
+    </bean>
 </beans>
