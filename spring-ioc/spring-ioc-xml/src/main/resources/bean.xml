@@ -18,4 +18,82 @@
         <constructor-arg name="name" value="《Spring——依赖注入（构造器）》"/>
         <constructor-arg name="author" value="anthony"/>
     </bean>
+
+    <bean id="specialValComponent" class="vip.openpark.ioc.xml.component.SpecialValComponent">
+        <property name="surfaceValue" value="SURFACE"/>
+        <property name="nullVal">
+            <null/>
+        </property>
+        <property name="xmlVal" value="a &lt; b"/>
+        <property name="cdataVal">
+            <value><![CDATA[c < d]]]></value>
+        </property>
+    </bean>
+
+
+    <bean id="dept" class="vip.openpark.ioc.xml.component.Dept">
+        <constructor-arg name="name" value="科技中心"/>
+    </bean>
+    <bean id="emp" class="vip.openpark.ioc.xml.component.Emp">
+        <!-- 使用 property 标签中 ref 属性引用外部对象 -->
+        <property name="dept" ref="dept"/>
+        <property name="name" value="anthony"/>
+        <property name="age" value="18"/>
+    </bean>
+
+    <bean id="empInnerBean" class="vip.openpark.ioc.xml.component.Emp">
+        <!-- 使用 property 标签下的子标签引入 -->
+        <property name="dept">
+            <bean class="vip.openpark.ioc.xml.component.Dept">
+                <property name="name" value="中台部门"/>
+            </bean>
+        </property>
+        <property name="name" value="anthony"/>
+        <property name="age" value="18"/>
+    </bean>
+
+    <bean id="deptCascade" class="vip.openpark.ioc.xml.component.Dept"/>
+    <bean id="empCascade" class="vip.openpark.ioc.xml.component.Emp">
+        <!-- 使用级联的方式，1首先引入外部bean，2对外部bean进行赋值 -->
+        <property name="dept" ref="deptCascade"/>
+        <property name="dept.name" value="业务部门"/>
+        <property name="name" value="anthony"/>
+        <property name="age" value="18"/>
+    </bean>
+
+
+    <bean id="dept1" class="vip.openpark.ioc.xml.component.Dept">
+        <constructor-arg name="name" value="采购部"/>
+    </bean>
+    <bean id="dept2" class="vip.openpark.ioc.xml.component.Dept">
+        <constructor-arg name="name" value="工程部"/>
+    </bean>
+    <bean id="collectionComponent" class="vip.openpark.ioc.xml.component.CollectionComponent">
+        <property name="bookArray">
+            <array value-type="java.lang.String">
+                <value>《秘密》</value>
+                <value>《毛泽东选集》</value>
+                <value>《资本论》</value>
+            </array>
+        </property>
+        <property name="numSet">
+            <set>
+                <value>1</value>
+                <value>2</value>
+                <value>3</value>
+            </set>
+        </property>
+        <property name="deptList">
+            <list>
+                <ref bean="dept1"/>
+                <ref bean="dept2"/>
+            </list>
+        </property>
+        <property name="phoneMap">
+            <map>
+                <entry key="李白" value="123456"/>
+                <entry key="杜甫" value="654321"/>
+            </map>
+        </property>
+    </bean>
 </beans>
