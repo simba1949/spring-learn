@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+">
+    <!--
+    引入命名空间：xmlns:context="http://www.springframework.org/schema/context"
+    扩展 schemaLocation：http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+    -->
+    <context:property-placeholder location="classpath:db-info.properties"/>
+
+    <bean id="dbInfo" class="vip.openpark.ioc.xml.component.DBInfo">
+        <property name="driver" value="${jdbc.driver}"/>
+        <property name="url" value="${jdbc.url}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+</beans>
