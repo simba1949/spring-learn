@@ -18,7 +18,7 @@ public class LogAspectTwo {
      * 不同切面中使用引用切入点
      */
     @After("vip.openpark.aop.annotation.aspect.LogAspectOneWithPointCut.pointcut()")
-    public void before() {
+    public void after() {
         log.info("后置通知：不同切面中使用");
     }
 }

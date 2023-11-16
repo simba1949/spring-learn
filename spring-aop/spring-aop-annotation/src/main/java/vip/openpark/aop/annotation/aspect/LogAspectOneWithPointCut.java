@@ -26,7 +26,7 @@ public class LogAspectOneWithPointCut {
      * 同一切面中使用引用切入点
      */
     @AfterReturning("pointcut()")
-    public void before() {
+    public void afterReturning() {
         log.info("返回通知：同一切面中使用");
     }
 }
