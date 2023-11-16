@@ -13,6 +13,7 @@
         <module>spring-quick-start</module>
         <module>spring-ioc</module>
         <module>spring-aop</module>
+        <module>spring-test</module>
     </modules>
 
     <properties>
