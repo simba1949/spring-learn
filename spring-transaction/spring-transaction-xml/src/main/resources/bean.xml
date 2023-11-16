@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+       http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd
+">
+    <!-- 引入外部属性文件，用于创建数据源对象-->
+    <context:property-placeholder location="jdbc.properties"/>
+
+    <bean id="userRepository" class="vip.openpark.transaction.xml.repository.UserRepository"/>
+
+    <!-- 配置数据源 -->
+    <bean id="druidDataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="url" value="${jdbc.url}"/>
+        <property name="driverClassName" value="${jdbc.driver}"/>
+        <property name="username" value="${jdbc.username}"/>
+        <property name="password" value="${jdbc.password}"/>
+    </bean>
+
+    <!-- 创建 jdbcTemplate 对象，注入数据源-->
+    <bean id="jdbcTempalte" class="org.springframework.jdbc.core.JdbcTemplate">
+        <property name="dataSource" ref="druidDataSource"/>
+    </bean>
+
+    <!-- 配置事务管理器 -->
+    <bean id="dataSourceTransactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="druidDataSource"/>
+    </bean>
+    <!-- 事务拦截器 -->
+    <tx:advice id="transactionInterceptor" transaction-manager="dataSourceTransactionManager">
+        <tx:attributes>
+            <!--
+            tx:method
+                - name表示哪些方法开启事务
+                - propagation 表示事务传播机制
+                - isolation 表示事务隔离级别
+                - rollback-for 发生什么类型异常回滚
+                - read-only="true" 表示只读，不允许写操作
+            -->
+            <tx:method name="insert*" propagation="REQUIRED" isolation="DEFAULT" rollback-for="java.lang.Throwable"/>
+            <tx:method name="add*" propagation="REQUIRED" isolation="DEFAULT" rollback-for="java.lang.Throwable"/>
+            <tx:method name="delete*" propagation="REQUIRED" isolation="DEFAULT" rollback-for="java.lang.Throwable"/>
+            <tx:method name="remove*" propagation="REQUIRED" isolation="DEFAULT" rollback-for="java.lang.Throwable"/>
+            <tx:method name="update*" propagation="REQUIRED" isolation="DEFAULT" rollback-for="java.lang.Throwable"/>
+            <tx:method name="modify*" propagation="REQUIRED" isolation="DEFAULT" rollback-for="java.lang.Throwable"/>
+        </tx:attributes>
+    </tx:advice>
+
+</beans>

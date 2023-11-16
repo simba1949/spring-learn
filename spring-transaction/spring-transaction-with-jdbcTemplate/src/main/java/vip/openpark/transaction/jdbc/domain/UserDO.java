@@ -1,9 +1,6 @@
 package vip.openpark.transaction.jdbc.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
-import lombok.NoArgsConstructor;
 
 import java.io.Serial;
 import java.io.Serializable;
@@ -14,10 +11,7 @@ import java.time.LocalDateTime;
  * @version 2023/11/6 17:16
  */
 @Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-public class User implements Serializable {
+public class UserDO implements Serializable {
     @Serial
     private static final long serialVersionUID = -5786786308237386825L;
 
