@@ -15,6 +15,7 @@
         <module>spring-aop</module>
         <module>spring-test</module>
         <module>spring-transaction</module>
+        <module>spring-resources</module>
     </modules>
 
     <properties>
