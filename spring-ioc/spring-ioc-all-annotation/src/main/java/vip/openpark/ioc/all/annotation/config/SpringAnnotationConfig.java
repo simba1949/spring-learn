@@ -10,5 +10,5 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 // @ComponentScan 指定扫描包路径
 @ComponentScan(value = "vip.openpark.ioc.all.annotation")
-public class SpringConfig {
+public class SpringAnnotationConfig {
 }

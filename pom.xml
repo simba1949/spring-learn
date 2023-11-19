@@ -16,6 +16,7 @@
         <module>spring-test</module>
         <module>spring-transaction</module>
         <module>spring-resources</module>
+        <module>spring-i18n</module>
     </modules>
 
     <properties>

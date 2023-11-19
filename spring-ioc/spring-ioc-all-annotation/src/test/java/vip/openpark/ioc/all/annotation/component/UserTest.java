@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import vip.openpark.ioc.all.annotation.config.SpringConfig;
+import vip.openpark.ioc.all.annotation.config.SpringAnnotationConfig;
 
 /**
  * @author anthony
@@ -15,7 +15,7 @@ public class UserTest {
     @Test
     public void test() {
         // 加载 spring 配置类的方式
-        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringConfig.class);
+        ApplicationContext applicationContext = new AnnotationConfigApplicationContext(SpringAnnotationConfig.class);
         User bean = applicationContext.getBean(User.class);
         log.info("{}", bean);
     }
