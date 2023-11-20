@@ -24,5 +24,7 @@
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
         </dependency>
+
+        <!-- lombok/logback-classic/junit-jupiter/fastjson2 等工具包依赖继承父类 -->
     </dependencies>
 </project>
