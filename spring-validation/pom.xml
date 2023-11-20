@@ -3,13 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
+    <artifactId>spring-validation</artifactId>
+
     <parent>
         <groupId>vip.openpark</groupId>
-        <artifactId>spring-ioc</artifactId>
+        <artifactId>spring-learn</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-
-    <artifactId>spring-ioc-annotation</artifactId>
 
     <properties>
         <maven.compiler.source>21</maven.compiler.source>
@@ -17,12 +17,4 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
-    <dependencies>
-        <!-- https://mvnrepository.com/artifact/jakarta.annotation/jakarta.annotation-api -->
-        <dependency>
-            <groupId>jakarta.annotation</groupId>
-            <artifactId>jakarta.annotation-api</artifactId>
-            <version>${jakarta.annotation-api.version}</version>
-        </dependency>
-    </dependencies>
 </project>

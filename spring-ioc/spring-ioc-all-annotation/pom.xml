@@ -22,7 +22,7 @@
         <dependency>
             <groupId>jakarta.annotation</groupId>
             <artifactId>jakarta.annotation-api</artifactId>
-            <version>3.0.0-M1</version>
+            <version>${jakarta.annotation-api.version}</version>
         </dependency>
     </dependencies>
 </project>
