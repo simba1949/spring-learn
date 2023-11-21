@@ -10,7 +10,7 @@ import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
  * @version 2023/11/21 23:41
  */
 @Slf4j
-public class IOCContainerTest {
+public class BeanFactoryAsIocContainerTest {
 
     @Test
     public void execTest(){
