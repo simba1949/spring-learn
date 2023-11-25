@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- 定义 factory-bean -->
+    <bean id="customFactoryBeanInterface" class="vip.openpark.ioc.xml.factorybean.CustomFactoryBeanInterfaceImpl"/>
+    <!-- 通过指定 factory-bean 和  factory-method 创建 User -->
+    <!-- 注意：这里的 id 配置的是 userInterface -->
+    <bean id="userInterface"
+          factory-bean="customFactoryBeanInterface"
+          factory-method="createUser"/>
+</beans>
