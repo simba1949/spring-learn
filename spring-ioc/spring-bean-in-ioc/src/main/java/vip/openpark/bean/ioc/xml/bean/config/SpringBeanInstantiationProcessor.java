@@ -70,6 +70,11 @@ public class SpringBeanInstantiationProcessor implements InstantiationAwareBeanP
 			MutablePropertyValues propertyValues = new MutablePropertyValues();
 			
 			for (PropertyValue propertyValue : pvs) {
+				// 属性值为 null，不做处理
+				if (null == propertyValue.getValue()){
+					continue;
+				}
+				
 				// 如果是 name 属性，重新赋值
 				if ("name".equals(propertyValue.getName())) {
 					propertyValues.addPropertyValue("name", "《毛泽东选集》");
