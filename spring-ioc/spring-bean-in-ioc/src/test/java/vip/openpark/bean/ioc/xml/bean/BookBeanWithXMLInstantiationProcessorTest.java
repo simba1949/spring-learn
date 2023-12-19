@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
-import vip.openpark.bean.ioc.xml.bean.config.SpringBeanInstantiationProcessor;
+import vip.openpark.bean.ioc.xml.bean.config.CustomInstantiationAwareBeanPostProcessor;
 
 /**
  * @author anthony
@@ -23,7 +23,7 @@ public class BookBeanWithXMLInstantiationProcessorTest {
 		DefaultListableBeanFactory defaultListableBeanFactory = new DefaultListableBeanFactory();
 		
 		// 添加自定义的 InstantiationAwareBeanPostProcessor
-		defaultListableBeanFactory.addBeanPostProcessor(new SpringBeanInstantiationProcessor());
+		defaultListableBeanFactory.addBeanPostProcessor(new CustomInstantiationAwareBeanPostProcessor());
 		
 		// 读取使用 XML 配置的 bean
 		XmlBeanDefinitionReader xmlBeanDefinitionReader = new XmlBeanDefinitionReader(defaultListableBeanFactory);

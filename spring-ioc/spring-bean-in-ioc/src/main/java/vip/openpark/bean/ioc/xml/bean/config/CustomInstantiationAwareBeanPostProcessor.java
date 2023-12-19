@@ -12,7 +12,7 @@ import vip.openpark.bean.ioc.xml.bean.BookBeanWithXMLInstantiationProcessor;
  * @author anthony
  * @version 2023/12/19 14:33
  */
-public class SpringBeanInstantiationProcessor implements InstantiationAwareBeanPostProcessor {
+public class CustomInstantiationAwareBeanPostProcessor implements InstantiationAwareBeanPostProcessor {
 	
 	/**
 	 * 在实例化之前进行后处理器操作
