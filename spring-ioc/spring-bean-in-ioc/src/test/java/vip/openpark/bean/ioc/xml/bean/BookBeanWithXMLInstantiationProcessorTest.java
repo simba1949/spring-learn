@@ -21,6 +21,7 @@ public class BookBeanWithXMLInstantiationProcessorTest {
 	public void runSpringIocTest() {
 		// 创建 spring ioc 容器，spring ioc 默认 DefaultListableBeanFactory
 		DefaultListableBeanFactory defaultListableBeanFactory = new DefaultListableBeanFactory();
+		
 		// 添加自定义的 InstantiationAwareBeanPostProcessor
 		defaultListableBeanFactory.addBeanPostProcessor(new SpringBeanInstantiationProcessor());
 		

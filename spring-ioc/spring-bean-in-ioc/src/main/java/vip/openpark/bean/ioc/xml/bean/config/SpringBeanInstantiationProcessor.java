@@ -1,6 +1,9 @@
 package vip.openpark.bean.ioc.xml.bean.config;
 
 import org.springframework.beans.BeansException;
+import org.springframework.beans.MutablePropertyValues;
+import org.springframework.beans.PropertyValue;
+import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
 import org.springframework.util.ObjectUtils;
 import vip.openpark.bean.ioc.xml.bean.BookBeanWithXMLInstantiationProcessor;
@@ -47,5 +50,36 @@ public class SpringBeanInstantiationProcessor implements InstantiationAwareBeanP
 			return false;
 		}
 		return InstantiationAwareBeanPostProcessor.super.postProcessAfterInstantiation(bean, beanName);
+	}
+	
+	/**
+	 * 在属性赋值之前进行处理操作
+	 * 这里需要注释【postProcessBeforeInstantiation、postProcessAfterInstantiation 方法，防止测试时影响】
+	 *
+	 * @param pvs      the property values that the factory is about to apply (never {@code null})
+	 * @param bean     the bean instance created, but whose properties have not yet been set
+	 * @param beanName the name of the bean
+	 * @return the property values to apply to the given bean (can also be the original PropertyValues)
+	 * @throws BeansException if property values processing failed
+	 */
+	@Override
+	public PropertyValues postProcessProperties(PropertyValues pvs, Object bean, String beanName) throws BeansException {
+		if (ObjectUtils.nullSafeEquals("bookBeanWithInstantiationProcessor", beanName) &&
+			    BookBeanWithXMLInstantiationProcessor.class.equals(bean.getClass())) {
+			// "bookBeanWithInstantiationProcessor" 对象默认赋值
+			MutablePropertyValues propertyValues = new MutablePropertyValues();
+			
+			for (PropertyValue propertyValue : pvs) {
+				// 如果是 name 属性，重新赋值
+				if ("name".equals(propertyValue.getName())) {
+					propertyValues.addPropertyValue("name", "《毛泽东选集》");
+				} else {
+					// 非 name 属性，保持原有赋值方式
+					propertyValues.addPropertyValue(propertyValue.getName(), propertyValue.getValue());
+				}
+			}
+			return propertyValues;
+		}
+		return InstantiationAwareBeanPostProcessor.super.postProcessProperties(pvs, bean, beanName);
 	}
 }
