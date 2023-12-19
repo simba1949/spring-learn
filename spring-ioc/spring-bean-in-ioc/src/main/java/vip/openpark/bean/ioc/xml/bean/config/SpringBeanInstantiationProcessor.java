@@ -40,6 +40,7 @@ public class SpringBeanInstantiationProcessor implements InstantiationAwareBeanP
 	 */
 	@Override
 	public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
+		// 【生产慎用】这里做一个特殊处理，不允许属性赋值
 		if (ObjectUtils.nullSafeEquals("bookBeanWithInstantiationProcessor", beanName) &&
 			    BookBeanWithXMLInstantiationProcessor.class.equals(bean.getClass())) {
 			// "bookBeanWithInstantiationProcessor" 对象不允许属性赋值（配置元信息——>属性值）
