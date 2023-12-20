@@ -30,4 +30,13 @@
         <property name="age" value="18"/>
         <property name="description" value="XML配置描述"/>
     </bean>
+
+    <bean id="userBeanWithAnnotationInitializingBean"
+          class="vip.openpark.bean.ioc.xml.bean.UserBeanWithXMLInitializingBean"
+          init-method="init">
+        <property name="id" value="1"/>
+        <property name="name" value="anthony"/>
+        <property name="age" value="18"/>
+        <property name="description" value="XML配置描述"/>
+    </bean>
 </beans>

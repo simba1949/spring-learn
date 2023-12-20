@@ -10,6 +10,6 @@ import org.springframework.context.annotation.Configuration;
  * @version 2023/11/15 20:04
  */
 @Configuration
-@ComponentScan(value = "vip.openpark.bean.ioc")
+@ComponentScan(value = "vip.openpark.bean.ioc.annotation")
 public class SpringAnnotationConfig {
 }
