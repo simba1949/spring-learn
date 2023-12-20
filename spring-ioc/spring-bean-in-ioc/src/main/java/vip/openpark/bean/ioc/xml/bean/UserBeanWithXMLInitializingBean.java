@@ -5,8 +5,13 @@ import lombok.Data;
 import org.springframework.beans.factory.InitializingBean;
 
 /**
- * 查看注解方式：
- * {@link vip.openpark.bean.ioc.annotation.bean.UserBeanWithAnnotationInitializingBean}
+ * <div>
+ *     <title>注解 @PostConstruct、在XML中配置init-method方法、InitializingBean#afterPropertiesSet 方法同时存在时</title>
+ *     执行顺序：
+ *     1. @PostConstruct
+ *     2. InitializingBean#afterPropertiesSet 方法
+ *     3. InitializingBean#init 方法
+ * </div>
  *
  * @author anthony
  * @version 2023/12/20 16:38
@@ -21,7 +26,6 @@ public class UserBeanWithXMLInitializingBean implements InitializingBean {
 	
 	/**
 	 * 注解 @PostConstruct ，在构造函数执行完毕后执行
-	 * 只能使用注解的方式，在 XML 配置无法执行
 	 */
 	@PostConstruct
 	public void postConstruct() {
@@ -37,19 +41,6 @@ public class UserBeanWithXMLInitializingBean implements InitializingBean {
 	}
 	
 	/**
-	 * <div>
-	 *     <title>使用注解配置时</title>
-	 *     <div>
-	 *         注解 @PostConstruct 和  InitializingBean#afterPropertiesSet 方法同时存在时
-	 *         优先执行 @PostConstruct，然后执行 InitializingBean#afterPropertiesSet 方法
-	 *     </div>
-	 *
-	 *     <title>使用 XML 配置时</title>
-	 *     <div>
-	 *         在 XML 中配置 init-method 方法和  InitializingBean#afterPropertiesSet 方法同时存在时
-	 *         优先执行 InitializingBean#afterPropertiesSet 方法，然后执行 init-method 方法
-	 *     </div>
-	 * </div>
 	 * 实现 InitializingBean 接口，在构造函数执行完毕后执行
 	 *
 	 * @throws Exception 异常
