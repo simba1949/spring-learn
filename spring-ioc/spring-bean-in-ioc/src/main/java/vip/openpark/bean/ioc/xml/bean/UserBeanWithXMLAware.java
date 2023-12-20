@@ -12,13 +12,15 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.util.StringValueResolver;
 
 /**
+ * {@link org.springframework.beans.factory.Aware}
+ *
  * @author anthony
  * @version 2023/12/19 15:40
  */
 @Data
-public class UserBeanWithAware implements BeanNameAware, BeanClassLoaderAware, BeanFactoryAware,
-	                                          EnvironmentAware, EmbeddedValueResolverAware, ResourceLoaderAware,
-	                                          ApplicationEventPublisherAware, MessageSourceAware, ApplicationContextAware {
+public class UserBeanWithXMLAware implements BeanNameAware, BeanClassLoaderAware, BeanFactoryAware,
+	                                             EnvironmentAware, EmbeddedValueResolverAware, ResourceLoaderAware,
+	                                             ApplicationEventPublisherAware, MessageSourceAware, ApplicationContextAware {
 	private Long id;
 	private String name;
 	private Short age;

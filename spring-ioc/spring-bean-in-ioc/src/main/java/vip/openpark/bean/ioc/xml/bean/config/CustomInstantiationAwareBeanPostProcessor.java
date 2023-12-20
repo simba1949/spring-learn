@@ -6,7 +6,7 @@ import org.springframework.beans.PropertyValue;
 import org.springframework.beans.PropertyValues;
 import org.springframework.beans.factory.config.InstantiationAwareBeanPostProcessor;
 import org.springframework.util.ObjectUtils;
-import vip.openpark.bean.ioc.xml.bean.BookBeanWithXMLInstantiationProcessor;
+import vip.openpark.bean.ioc.xml.bean.BookBeanWithXMLInstantiationAwareBeanPostProcessor;
 
 /**
  * @author anthony
@@ -25,9 +25,9 @@ public class CustomInstantiationAwareBeanPostProcessor implements InstantiationA
 	@Override
 	public Object postProcessBeforeInstantiation(Class<?> beanClass, String beanName) throws BeansException {
 		if (ObjectUtils.nullSafeEquals("bookBeanWithInstantiationProcessor", beanName) &&
-			    BookBeanWithXMLInstantiationProcessor.class.equals(beanClass)) {
+			    BookBeanWithXMLInstantiationAwareBeanPostProcessor.class.equals(beanClass)) {
 			// 把配置完成 BookBeanWithInstantiationProcessor Bean 覆盖
-			return new BookBeanWithXMLInstantiationProcessor();
+			return new BookBeanWithXMLInstantiationAwareBeanPostProcessor();
 		}
 		// 保持 spring ioc 容器的实例化操作
 		return null;
@@ -45,7 +45,7 @@ public class CustomInstantiationAwareBeanPostProcessor implements InstantiationA
 	public boolean postProcessAfterInstantiation(Object bean, String beanName) throws BeansException {
 		// 【生产慎用】这里做一个特殊处理，不允许属性赋值
 		if (ObjectUtils.nullSafeEquals("bookBeanWithInstantiationProcessor", beanName) &&
-			    BookBeanWithXMLInstantiationProcessor.class.equals(bean.getClass())) {
+			    BookBeanWithXMLInstantiationAwareBeanPostProcessor.class.equals(bean.getClass())) {
 			// "bookBeanWithInstantiationProcessor" 对象不允许属性赋值（配置元信息——>属性值）
 			return false;
 		}
@@ -65,7 +65,7 @@ public class CustomInstantiationAwareBeanPostProcessor implements InstantiationA
 	@Override
 	public PropertyValues postProcessProperties(PropertyValues pvs, Object bean, String beanName) throws BeansException {
 		if (ObjectUtils.nullSafeEquals("bookBeanWithInstantiationProcessor", beanName) &&
-			    BookBeanWithXMLInstantiationProcessor.class.equals(bean.getClass())) {
+			    BookBeanWithXMLInstantiationAwareBeanPostProcessor.class.equals(bean.getClass())) {
 			// "bookBeanWithInstantiationProcessor" 对象默认赋值
 			MutablePropertyValues propertyValues = new MutablePropertyValues();
 			

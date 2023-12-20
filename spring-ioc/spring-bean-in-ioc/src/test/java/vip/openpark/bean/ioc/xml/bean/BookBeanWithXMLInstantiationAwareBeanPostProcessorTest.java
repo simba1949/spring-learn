@@ -11,7 +11,7 @@ import vip.openpark.bean.ioc.xml.bean.config.CustomInstantiationAwareBeanPostPro
  * @version 2023/12/19 14:42
  */
 @Slf4j
-public class BookBeanWithXMLInstantiationProcessorTest {
+public class BookBeanWithXMLInstantiationAwareBeanPostProcessorTest {
 	
 	/**
 	 * 1.创建 spring ioc 默认容器 DefaultListableBeanFactory
@@ -35,7 +35,7 @@ public class BookBeanWithXMLInstantiationProcessorTest {
 		UserBeanWithXml userBean = defaultListableBeanFactory.getBean("userBeanWithXml", UserBeanWithXml.class);
 		log.info("userBean = {}", userBean);
 		
-		BookBeanWithXMLInstantiationProcessor bookBean = defaultListableBeanFactory.getBean("bookBeanWithInstantiationProcessor", BookBeanWithXMLInstantiationProcessor.class);
+		BookBeanWithXMLInstantiationAwareBeanPostProcessor bookBean = defaultListableBeanFactory.getBean("bookBeanWithInstantiationProcessor", BookBeanWithXMLInstantiationAwareBeanPostProcessor.class);
 		log.info("bookBean = {}", bookBean);
 	}
 }

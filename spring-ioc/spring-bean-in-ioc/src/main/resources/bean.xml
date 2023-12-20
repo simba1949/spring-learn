@@ -13,14 +13,21 @@
         <property name="age" value="18"/>
     </bean>
 
-    <bean id="bookBeanWithInstantiationProcessor" class="vip.openpark.bean.ioc.xml.bean.BookBeanWithXMLInstantiationProcessor">
+    <bean id="bookBeanWithInstantiationProcessor" class="vip.openpark.bean.ioc.xml.bean.BookBeanWithXMLInstantiationAwareBeanPostProcessor">
         <property name="id" value="1"/>
         <property name="name" value="《王阳明心学》"/>
     </bean>
 
-    <bean id="userBeanWithAware" class="vip.openpark.bean.ioc.xml.bean.UserBeanWithAware">
+    <bean id="userBeanWithXMLAware" class="vip.openpark.bean.ioc.xml.bean.UserBeanWithXMLAware">
         <property name="id" value="1"/>
         <property name="name" value="anthony"/>
         <property name="age" value="18"/>
+    </bean>
+
+    <bean id="userBeanPostProcessor" class="vip.openpark.bean.ioc.xml.bean.UserBeanPostProcessor">
+        <property name="id" value="1"/>
+        <property name="name" value="anthony"/>
+        <property name="age" value="18"/>
+        <property name="description" value="XML配置描述"/>
     </bean>
 </beans>

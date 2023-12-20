@@ -10,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @version 2023/12/19 16:00
  */
 @Slf4j
-public class UserBeanWithAwareTest {
+public class UserBeanWithXMLAwareTest {
 	/**
 	 * 使用 ClassPathXmlApplicationContext 创建 spring ioc 容器，并指定配置文件位置
 	 */
@@ -18,7 +18,7 @@ public class UserBeanWithAwareTest {
 	public void runSpringIocTest() {
 		// 加载 spring 配置文件
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bean.xml");
-		UserBeanWithAware userBeanWithAware = applicationContext.getBean("userBeanWithAware", UserBeanWithAware.class);
-		log.info("userBeanWithAware = {}", userBeanWithAware);
+		UserBeanWithXMLAware userBeanWithXMLAware = applicationContext.getBean("userBeanWithAware", UserBeanWithXMLAware.class);
+		log.info("userBeanWithAware = {}", userBeanWithXMLAware);
 	}
 }
