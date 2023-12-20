@@ -11,7 +11,7 @@ import vip.openpark.bean.ioc.xml.bean.config.CustomBeanPostProcessor;
  * @version 2023/12/20 16:21
  */
 @Slf4j
-public class UserBeanPostProcessorTest {
+public class UserBeanWithXMLBeanPostProcessorTest {
 	/**
 	 * 1.创建 spring ioc 默认容器 DefaultListableBeanFactory
 	 * 2.使用 XmlBeanDefinitionReader 读取 xml 配置文件，解析成 beanDefinition
@@ -31,7 +31,7 @@ public class UserBeanPostProcessorTest {
 		int beanDefinitionCount = xmlBeanDefinitionReader.loadBeanDefinitions(location);
 		log.info("{}", beanDefinitionCount);
 		
-		UserBeanPostProcessor userBean = defaultListableBeanFactory.getBean("userBeanPostProcessor", UserBeanPostProcessor.class);
+		UserBeanWithXMLBeanPostProcessor userBean = defaultListableBeanFactory.getBean("userBeanPostProcessor", UserBeanWithXMLBeanPostProcessor.class);
 		log.info("userBean = {}", userBean);
 	}
 }

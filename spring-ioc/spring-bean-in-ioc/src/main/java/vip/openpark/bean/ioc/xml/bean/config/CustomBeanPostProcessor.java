@@ -2,7 +2,7 @@ package vip.openpark.bean.ioc.xml.bean.config;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.config.BeanPostProcessor;
-import vip.openpark.bean.ioc.xml.bean.UserBeanPostProcessor;
+import vip.openpark.bean.ioc.xml.bean.UserBeanWithXMLBeanPostProcessor;
 
 /**
  * @author anthony
@@ -19,8 +19,8 @@ public class CustomBeanPostProcessor implements BeanPostProcessor {
 	 */
 	@Override
 	public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
-		if ("userBeanPostProcessor".equals(beanName) && bean instanceof UserBeanPostProcessor) {
-			((UserBeanPostProcessor) bean).setDescription("spring bean 实例化前设置");
+		if ("userBeanPostProcessor".equals(beanName) && bean instanceof UserBeanWithXMLBeanPostProcessor) {
+			((UserBeanWithXMLBeanPostProcessor) bean).setDescription("spring bean 实例化前设置");
 		}
 		return BeanPostProcessor.super.postProcessBeforeInitialization(bean, beanName);
 	}
@@ -35,8 +35,8 @@ public class CustomBeanPostProcessor implements BeanPostProcessor {
 	 */
 	@Override
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
-		if ("userBeanPostProcessor".equals(beanName) && bean instanceof UserBeanPostProcessor) {
-			((UserBeanPostProcessor) bean).setName("spring bean 实例化后设置");
+		if ("userBeanPostProcessor".equals(beanName) && bean instanceof UserBeanWithXMLBeanPostProcessor) {
+			((UserBeanWithXMLBeanPostProcessor) bean).setName("spring bean 实例化后设置");
 		}
 		return BeanPostProcessor.super.postProcessAfterInitialization(bean, beanName);
 	}

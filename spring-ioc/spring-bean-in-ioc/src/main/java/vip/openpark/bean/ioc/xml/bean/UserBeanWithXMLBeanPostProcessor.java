@@ -12,7 +12,7 @@ import lombok.Data;
  * @version 2023/12/20 16:20
  */
 @Data
-public class UserBeanPostProcessor {
+public class UserBeanWithXMLBeanPostProcessor {
 	private Long id;
 	private String name;
 	private Short age;

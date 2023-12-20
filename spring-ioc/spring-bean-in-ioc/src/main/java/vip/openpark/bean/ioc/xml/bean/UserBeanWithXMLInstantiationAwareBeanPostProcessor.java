@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
  */
 @Data
 @Component
-public class BookBeanWithXMLInstantiationAwareBeanPostProcessor {
+public class UserBeanWithXMLInstantiationAwareBeanPostProcessor {
 	private Long id;
 	private String name;
 }
