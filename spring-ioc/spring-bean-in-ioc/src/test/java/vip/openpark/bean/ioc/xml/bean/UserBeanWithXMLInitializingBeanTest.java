@@ -19,7 +19,7 @@ public class UserBeanWithXMLInitializingBeanTest {
 	public void runSpringIocTest() {
 		// 创建 spring ioc 容器，spring ioc 默认 DefaultListableBeanFactory
 		DefaultListableBeanFactory defaultListableBeanFactory = new DefaultListableBeanFactory();
-		// 注解处理器
+		// 解决 {@link jakarta.annotation.PostConstruct} and {@link jakarta.annotation.PreDestroy} 注解问题
 		defaultListableBeanFactory.addBeanPostProcessor(new CommonAnnotationBeanPostProcessor());
 		
 		// 读取使用 XML 配置的 bean
