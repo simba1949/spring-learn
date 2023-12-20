@@ -19,6 +19,7 @@ public class CustomBeanPostProcessor implements BeanPostProcessor {
 	 */
 	@Override
 	public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+		// 【生产慎用】这里做一个特殊处理，对属性重新赋值
 		if ("userBeanPostProcessor".equals(beanName) && bean instanceof UserBeanWithXMLBeanPostProcessor) {
 			((UserBeanWithXMLBeanPostProcessor) bean).setDescription("spring bean 实例化前设置");
 		}
@@ -35,6 +36,7 @@ public class CustomBeanPostProcessor implements BeanPostProcessor {
 	 */
 	@Override
 	public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+		// 【生产慎用】这里做一个特殊处理，对属性重新赋值
 		if ("userBeanPostProcessor".equals(beanName) && bean instanceof UserBeanWithXMLBeanPostProcessor) {
 			((UserBeanWithXMLBeanPostProcessor) bean).setName("spring bean 实例化后设置");
 		}
