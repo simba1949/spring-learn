@@ -39,4 +39,11 @@
         <property name="age" value="18"/>
         <property name="description" value="XML配置描述"/>
     </bean>
+
+    <bean id="userBeanWithXMLSmartInitializingSingleton"
+          class="vip.openpark.bean.ioc.xml.bean.UserBeanWithXMLSmartInitializingSingleton">
+        <property name="id" value="1"/>
+        <property name="name" value="anthony"/>
+        <property name="age" value="18"/>
+    </bean>
 </beans>
