@@ -13,7 +13,8 @@
         <property name="age" value="18"/>
     </bean>
 
-    <bean id="bookBeanWithInstantiationProcessor" class="vip.openpark.bean.ioc.xml.bean.UserBeanWithXMLInstantiationAwareBeanPostProcessor">
+    <bean id="bookBeanWithInstantiationProcessor"
+          class="vip.openpark.bean.ioc.xml.bean.UserBeanWithXMLInstantiationAwareBeanPostProcessor">
         <property name="id" value="1"/>
         <property name="name" value="《王阳明心学》"/>
     </bean>
@@ -53,4 +54,8 @@
         <property name="name" value="anthony"/>
         <property name="age" value="18"/>
     </bean>
+
+    <bean id="userBeanWithXmlDisposableBean"
+          class="vip.openpark.bean.ioc.xml.bean.UserBeanWithXmlDisposableBean"
+          destroy-method="customDestroy"/>
 </beans>
