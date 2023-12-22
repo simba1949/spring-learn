@@ -46,4 +46,11 @@
         <property name="name" value="anthony"/>
         <property name="age" value="18"/>
     </bean>
+
+    <bean id="userBeanWithXmlDestructionAwareBeanPostProcessor"
+          class="vip.openpark.bean.ioc.xml.bean.UserBeanWithXmlDestructionAwareBeanPostProcessor">
+        <property name="id" value="1"/>
+        <property name="name" value="anthony"/>
+        <property name="age" value="18"/>
+    </bean>
 </beans>
