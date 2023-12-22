@@ -1,4 +1,4 @@
-package vip.openpark.bean.ioc.xml.bean.config;
+package vip.openpark.bean.ioc.xml.config;
 
 import org.springframework.beans.BeansException;
 import org.springframework.beans.MutablePropertyValues;

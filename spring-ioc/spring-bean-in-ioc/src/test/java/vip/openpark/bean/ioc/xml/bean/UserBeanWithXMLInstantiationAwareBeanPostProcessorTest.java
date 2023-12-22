@@ -4,7 +4,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.support.DefaultListableBeanFactory;
 import org.springframework.beans.factory.xml.XmlBeanDefinitionReader;
-import vip.openpark.bean.ioc.xml.bean.config.CustomInstantiationAwareBeanPostProcessor;
+import vip.openpark.bean.ioc.xml.config.CustomInstantiationAwareBeanPostProcessor;
 
 /**
  * @author anthony
