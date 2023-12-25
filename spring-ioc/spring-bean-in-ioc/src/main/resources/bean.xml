@@ -58,4 +58,11 @@
     <bean id="userBeanWithXmlDisposableBean"
           class="vip.openpark.bean.ioc.xml.bean.UserBeanWithXmlDisposableBean"
           destroy-method="customDestroy"/>
+
+
+    <bean id="userBeanWithXmlGC" class="vip.openpark.bean.ioc.xml.bean.UserBeanWithXmlGC">
+        <property name="id" value="1"/>
+        <property name="name" value="anthony"/>
+        <property name="age" value="18"/>
+    </bean>
 </beans>
