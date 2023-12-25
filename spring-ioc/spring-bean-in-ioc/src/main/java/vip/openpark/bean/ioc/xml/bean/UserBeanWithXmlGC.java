@@ -18,7 +18,7 @@ public class UserBeanWithXmlGC implements Closeable {
 	private Short age;
 
 	/**
-	 * JDK9（含）之前须有finalize方法
+	 * JDK9（不含）之前须有finalize方法
 	 *
 	 * @throws Throwable 异常
 	 */
