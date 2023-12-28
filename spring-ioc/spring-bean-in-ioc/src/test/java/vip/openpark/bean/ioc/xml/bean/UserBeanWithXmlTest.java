@@ -28,8 +28,8 @@ public class UserBeanWithXmlTest {
 		int beanDefinitionCount = xmlBeanDefinitionReader.loadBeanDefinitions(location);
 		log.info("{}", beanDefinitionCount);
 
-		UserBeanWithXml userBeanWithXml = defaultListableBeanFactory.getBean("userBeanWithXml", UserBeanWithXml.class);
-		log.info("userBeanWithXml = {}", userBeanWithXml);
+		UserBeanWithXml bean = defaultListableBeanFactory.getBean("userBeanWithXml", UserBeanWithXml.class);
+		log.info("bean = {}", bean);
 	}
 
 	/**
@@ -39,7 +39,7 @@ public class UserBeanWithXmlTest {
 	public void runSpringIocWithClassPathXmlApplicationContextTest() {
 		// 加载 spring 配置文件
 		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bean.xml");
-		UserBeanWithXml userBeanWithXml = applicationContext.getBean("userBeanWithXml", UserBeanWithXml.class);
-		log.info("userBeanWithXml = {}", userBeanWithXml);
+		UserBeanWithXml bean = applicationContext.getBean("userBeanWithXml", UserBeanWithXml.class);
+		log.info("bean = {}", bean);
 	}
 }
