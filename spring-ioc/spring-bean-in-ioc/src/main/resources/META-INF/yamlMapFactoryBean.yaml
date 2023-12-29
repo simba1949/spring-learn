@@ -1,0 +1,13 @@
+user:
+  name: John Doe
+  age: 32
+  address:
+    street: 123 Main St
+    city: New York
+    state: NY
+    zip: 10001
+  phoneNumbers:
+    - number: 123-456-7890
+      type: Home
+    - number: 987-654-3210
+      type: Work

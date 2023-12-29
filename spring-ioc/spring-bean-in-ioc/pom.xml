@@ -24,5 +24,11 @@
             <artifactId>jakarta.annotation-api</artifactId>
             <version>${jakarta.annotation-api.version}</version>
         </dependency>
+        <!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
+        <dependency>
+            <groupId>org.yaml</groupId>
+            <artifactId>snakeyaml</artifactId>
+            <version>${snakeyaml.version}</version>
+        </dependency>
     </dependencies>
 </project>
