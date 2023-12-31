@@ -19,6 +19,7 @@
         <module>spring-i18n</module>
         <module>spring-validation</module>
         <module>spring-data-bind</module>
+        <module>spring-type-conversion</module>
     </modules>
 
     <properties>
@@ -37,6 +38,10 @@
         <druid.version>1.2.20</druid.version>
         <!-- https://mvnrepository.com/artifact/org.yaml/snakeyaml -->
         <snakeyaml.version>2.2</snakeyaml.version>
+        <!-- https://mvnrepository.com/artifact/org.hibernate.validator/hibernate-validator -->
+        <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
+        <!-- https://mvnrepository.com/artifact/org.glassfish.expressly/expressly -->
+        <expressly.version>5.0.0</expressly.version>
     </properties>
 
     <dependencies>

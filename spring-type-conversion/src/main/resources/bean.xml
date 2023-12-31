@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean class="org.springframework.beans.factory.config.CustomEditorConfigurer">
+        <property name="propertyEditorRegistrars">
+            <list>
+                <!-- 配置ApplicationInfoPropertyEditorRegister对象，为了让spring识别到-->
+                <bean class="vip.openpark.type.conversion.CustomPropertyEditorRegistrar"/>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="user" class="vip.openpark.type.conversion.common.User">
+        <property name="id" value="1"/>
+        <property name="name" value="anthony"/>
+        <!-- properties 配置 -->
+        <property name="birthday" value="2023年12月31日"/>
+    </bean>
+</beans>
