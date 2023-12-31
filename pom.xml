@@ -20,6 +20,7 @@
         <module>spring-validation</module>
         <module>spring-data-bind</module>
         <module>spring-type-conversion</module>
+        <module>spring-event</module>
     </modules>
 
     <properties>
