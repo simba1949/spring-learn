@@ -8,17 +8,17 @@ import vip.openpark.type.conversion.common.User;
 
 /**
  * @author anthony
- * @since 2023/12/31 10:10
+ * @since 2023/12/31 14:02
  */
 @Slf4j
-public class CustomPropertyEditorRegistrarTest {
+public class CustomConditionalGenericConverterTest {
 	/**
 	 * 使用 ClassPathXmlApplicationContext 创建 spring ioc 容器，并指定配置文件位置
 	 */
 	@Test
 	public void runSpringIocWithClassPathXmlApplicationContextTest() {
 		// 加载 spring 配置文件
-		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bean-editor.xml");
+		ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bean-converter.xml");
 		
 		User bean = applicationContext.getBean("user", User.class);
 		log.info("bean = {}", bean);
