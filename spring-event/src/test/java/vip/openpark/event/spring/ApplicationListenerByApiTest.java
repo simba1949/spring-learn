@@ -17,6 +17,7 @@ public class ApplicationListenerByApiTest {
 	public void onEventTest() {
 		GenericApplicationContext applicationContext = new GenericApplicationContext();
 		// 面向 Spring 接口的事件监听
+		// 基于 ConfigurableApplicationContext API 实现监听器的注册
 		applicationContext.addApplicationListener(new ApplicationListener<ApplicationEvent>() {
 			@Override
 			public void onApplicationEvent(ApplicationEvent event) {
