@@ -21,6 +21,7 @@
         <module>spring-data-bind</module>
         <module>spring-type-conversion</module>
         <module>spring-event</module>
+        <module>spring-annotation</module>
     </modules>
 
     <properties>
