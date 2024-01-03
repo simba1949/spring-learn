@@ -1,4 +1,4 @@
-package vip.openpark.annotation;
+package vip.openpark.annotation.enable;
 
 import org.springframework.beans.factory.annotation.AnnotatedGenericBeanDefinition;
 import org.springframework.beans.factory.support.BeanDefinitionRegistry;

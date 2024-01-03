@@ -1,4 +1,4 @@
-package vip.openpark.annotation;
+package vip.openpark.annotation.enable;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
