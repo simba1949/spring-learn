@@ -15,6 +15,9 @@
     <modules>
         <module>spring-aop-xml</module>
         <module>spring-aop-annotation</module>
+        <module>jdk-dynamic-proxy</module>
+        <module>cglib-dynamic-proxy</module>
+        <module>javassist-dynamic-proxy</module>
     </modules>
 
     <properties>

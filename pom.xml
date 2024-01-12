@@ -44,6 +44,10 @@
         <hibernate-validator.version>8.0.1.Final</hibernate-validator.version>
         <!-- https://mvnrepository.com/artifact/org.glassfish.expressly/expressly -->
         <expressly.version>5.0.0</expressly.version>
+        <!-- https://mvnrepository.com/artifact/cglib/cglib -->
+        <cglib.version>3.3.0</cglib.version>
+        <!-- https://mvnrepository.com/artifact/org.javassist/javassist -->
+        <javassist.version>3.30.2-GA</javassist.version>
     </properties>
 
     <dependencies>
