@@ -1,4 +1,4 @@
-package vip.openpark.aop.cjlib;
+package vip.openpark.aop.cglib;
 
 import net.sf.cglib.proxy.Enhancer;
 import net.sf.cglib.proxy.MethodInterceptor;

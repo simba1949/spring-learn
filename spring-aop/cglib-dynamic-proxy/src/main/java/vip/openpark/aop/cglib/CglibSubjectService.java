@@ -1,4 +1,4 @@
-package vip.openpark.aop.cjlib;
+package vip.openpark.aop.cglib;
 
 import lombok.extern.slf4j.Slf4j;
 
