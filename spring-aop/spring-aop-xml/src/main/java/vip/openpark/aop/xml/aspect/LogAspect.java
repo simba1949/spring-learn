@@ -62,12 +62,12 @@ public class LogAspect {
         try {
             log.info("环绕通知（前置通知）");
             result = proceedingJoinPoint.proceed(); // 调用目标方法
-            log.info("环绕通知（返回通知）");
+            log.info("环绕通知（后置通知）");
             return result;
         } catch (Throwable e) {
             log.info("环绕通知（异常通知）");
         } finally {
-            log.info("环绕通知（后置通知）");
+            log.info("环绕通知（返回通知）");
         }
 
         return result;
