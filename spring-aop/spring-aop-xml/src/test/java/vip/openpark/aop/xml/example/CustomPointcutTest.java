@@ -12,7 +12,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 @Slf4j
 public class CustomPointcutTest {
     @Test
-    public void test() {
+    public void aopTest() {
         // 加载 spring 配置文件
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("custom-pointcut.xml");
         // 获取创建的对象
