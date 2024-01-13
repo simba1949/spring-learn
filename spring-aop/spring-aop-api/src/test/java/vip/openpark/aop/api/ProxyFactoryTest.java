@@ -1,10 +1,10 @@
-package vip.openpark.aop.annotation;
+package vip.openpark.aop.api;
 
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.aop.framework.ProxyFactory;
-import vip.openpark.aop.annotation.example.HelloServiceImpl;
-import vip.openpark.aop.annotation.example.IHelloService;
+import vip.openpark.aop.api.example.impl.HelloServiceImpl;
+import vip.openpark.aop.api.example.IHelloService;
 
 /**
  * @author anthony

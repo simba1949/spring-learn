@@ -19,6 +19,7 @@
         <module>cglib-dynamic-proxy</module>
         <module>javassist-dynamic-proxy</module>
         <module>aspectj-api-aop</module>
+        <module>spring-aop-api</module>
     </modules>
 
     <properties>

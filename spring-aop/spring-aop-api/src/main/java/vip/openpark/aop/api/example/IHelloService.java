@@ -1,4 +1,4 @@
-package vip.openpark.aop.annotation.example;
+package vip.openpark.aop.api.example;
 
 /**
  * @author anthony
