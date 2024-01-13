@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 被代理bean -->
+    <bean id="echoService" class="vip.openpark.aop.xml.auto.proxy.EchoService"/>
+    <!-- 自定义拦截器 -->
+    <bean id="echoServiceMethodInterceptor" class="vip.openpark.aop.xml.auto.proxy.EchoServiceMethodInterceptor"/>
+    <!-- auto proxy -->
+    <bean class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+        <property name="beanNames">
+            <list>
+                <value>echoService</value>
+            </list>
+        </property>
+        <property name="interceptorNames">
+            <list>
+                <value>echoServiceMethodInterceptor</value>
+            </list>
+        </property>
+    </bean>
+</beans>

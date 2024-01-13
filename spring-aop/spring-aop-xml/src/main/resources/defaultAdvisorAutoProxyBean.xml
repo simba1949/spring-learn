@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+       http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!-- 被代理bean -->
+    <bean id="echoService" class="vip.openpark.aop.xml.auto.proxy.EchoService"/>
+
+    <!-- auto proxy -->
+    <bean class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"/>
+    <!-- 定义切点 -->
+    <bean id="customPointcut" class="vip.openpark.aop.xml.auto.proxy.CustomPointcut">
+        <constructor-arg name="methodName" value="echo"/>
+        <constructor-arg name="targetClass" value="vip.openpark.aop.xml.auto.proxy.EchoService"/>
+    </bean>
+    <!-- 自定义拦截器 -->
+    <bean id="echoServiceMethodInterceptor" class="vip.openpark.aop.xml.auto.proxy.EchoServiceMethodInterceptor"/>
+    <!-- 切点Advisor -->
+    <bean class="org.springframework.aop.support.DefaultPointcutAdvisor">
+        <constructor-arg ref="customPointcut" index="0"/>
+        <constructor-arg ref="echoServiceMethodInterceptor" index="1"/>
+    </bean>
+</beans>
