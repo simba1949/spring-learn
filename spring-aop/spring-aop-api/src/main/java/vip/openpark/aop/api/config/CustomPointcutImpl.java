@@ -69,11 +69,7 @@ public class CustomPointcutImpl implements Pointcut {
 					return false;
 				}
 				
-				// 参数类型数量不匹配
-				if (parameterTypes.length != method.getParameterTypes().length) {
-					return false;
-				}
-				// 如果参数类型数量匹配，仅比较哈希码
+				// 使用 java.util.Array.equals() 方法用于比较两个数组是否相等
 				return Arrays.equals(parameterTypes, method.getParameterTypes());
 			}
 			
