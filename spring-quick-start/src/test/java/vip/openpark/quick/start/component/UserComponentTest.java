@@ -22,8 +22,6 @@ public class UserComponentTest {
 
     /**
      * JDK21 通过反射创建对象
-     *
-     * @throws Exception
      */
     @Test
     public void createObjByReflect() throws Exception {

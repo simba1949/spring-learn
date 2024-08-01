@@ -4,7 +4,8 @@ import lombok.extern.slf4j.Slf4j;
 
 /**
  * @author anthony
- * @version 2023/11/13 20:01
+ * @version 2024/08/01
+ * @since 2023/11/13 20:01
  */
 @Slf4j
 public class UserComponent {
