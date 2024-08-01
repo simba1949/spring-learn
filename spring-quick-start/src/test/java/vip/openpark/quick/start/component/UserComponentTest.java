@@ -12,7 +12,7 @@ public class UserComponentTest {
 
     @Test
     public void getUserComponent() {
-        // 加载 spring 配置文件
+        // 使用 ClassPathXmlApplicationContext 加载 spring 配置文件
         ApplicationContext applicationContext = new ClassPathXmlApplicationContext("bean.xml");
         // 获取创建的对象
         UserComponent userComponent = (UserComponent) applicationContext.getBean("userComponent");
