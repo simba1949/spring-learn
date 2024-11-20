@@ -22,6 +22,7 @@
         <module>spring-type-conversion</module>
         <module>spring-event</module>
         <module>spring-annotation</module>
+        <module>spring-el</module>
     </modules>
 
     <properties>
